@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "ConsoleTableExt/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ConsoleTableExt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ConsoleTableExt.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -75,6 +84,20 @@
     }
   },
   "libraries": {
+    "ConsoleTableExt/3.2.0": {
+      "sha512": "IhaHj6R2vSbb781aRXngan6nKRp8R5rnL2X5fL0uRW2wRiFyCIUh81T/QOih0//PjzoXMk2Uv4ayBAGDLH338A==",
+      "type": "package",
+      "path": "consoletableext/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "consoletableext.3.2.0.nupkg.sha512",
+        "consoletableext.nuspec",
+        "lib/net35/ConsoleTableExt.dll",
+        "lib/net46/ConsoleTableExt.dll",
+        "lib/netstandard2.0/ConsoleTableExt.dll"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -230,6 +253,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ConsoleTableExt >= 3.2.0",
       "Newtonsoft.Json >= 13.0.3",
       "RestSharp >= 110.2.1-alpha.0.16"
     ]
@@ -273,6 +297,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "ConsoleTableExt": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
