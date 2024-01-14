@@ -10,5 +10,12 @@ public class UserInput
         
         Console.WriteLine("Choose category:");
         string category = Console.ReadLine();
+
+        GetMealInput(category);
+    }
+
+    private void GetMealInput(string category)
+    {
+        throw new NotImplementedException();
     }
 }
