@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "oDYimNvURs3tJTd4tDw+t/LJl9xB79+v2exrRTZbAxJco/98KNWl6aN+d8u3jGsZf8GZyXrlCTBSDE1WHKFIGA==",
+  "dgSpecHash": "qW0S6PMUZI4+J84R5IVkvXlNawDkU3wgRA8GLE+2da81ahgQkfGcxqB1GoNJHbJsJXvE35O2BaPCMYhjikalzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\dnll4\\RiderProjects\\meal-Info\\meal-Info\\meal-Info.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dnll4\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\dnll4\\.nuget\\packages\\restsharp\\110.2.1-alpha.0.16\\restsharp.110.2.1-alpha.0.16.nupkg.sha512",
+    "C:\\Users\\dnll4\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\dnll4\\.nuget\\packages\\system.text.json\\7.0.3\\system.text.json.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

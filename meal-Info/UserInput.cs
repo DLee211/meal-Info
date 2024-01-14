@@ -2,8 +2,11 @@
 
 public class UserInput
 {
+
+    private MealService mealService = new();
     public void GetCategoriesInput()
     {
-        throw new NotImplementedException();
+        mealService.GetCategories();
+        Console.ReadLine();
     }
 }
