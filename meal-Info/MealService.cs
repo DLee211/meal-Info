@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+﻿using System.Net;
 using System.Web;
 using meal_Info.Model;
 using Newtonsoft.Json;
@@ -16,9 +16,9 @@ public class MealService
 
         List<Category> categories = new();
 
-        if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
+        if (response.Result.StatusCode == HttpStatusCode.OK)
         {
-            string rawResponse = response.Result.Content;
+            var rawResponse = response.Result.Content;
             var serialize = JsonConvert.DeserializeObject<Categories>(rawResponse);
 
             categories = serialize.CategoriesList;
@@ -38,9 +38,9 @@ public class MealService
 
         List<Meal> meals = new();
 
-        if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
+        if (response.Result.StatusCode == HttpStatusCode.OK)
         {
-            string rawResponse = response.Result.Content;
+            var rawResponse = response.Result.Content;
 
             var serialize = JsonConvert.DeserializeObject<Meals>(rawResponse);
 
@@ -61,36 +61,30 @@ public class MealService
 
         var response = client.ExecuteAsync(request);
 
-        if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
+        if (response.Result.StatusCode == HttpStatusCode.OK)
         {
-            string rawResponse = response.Result.Content;
+            var rawResponse = response.Result.Content;
 
             var serialize = JsonConvert.DeserializeObject<MealDetailObject>(rawResponse);
-            
-            List<MealDetails> returnedList = serialize.MealDetailList;
 
-            MealDetails mealDetails = returnedList[0];
-            
+            var returnedList = serialize.MealDetailList;
+
+            var mealDetails = returnedList[0];
+
             List<object> prepList = new();
 
-            string formattedName = "";
+            var formattedName = "";
 
-            foreach (PropertyInfo prop in mealDetails.GetType().GetProperties())
+            foreach (var prop in mealDetails.GetType().GetProperties())
             {
-
-                if (prop.Name.Contains("str"))
-                {
-                    formattedName = prop.Name.Substring(3);
-                }
+                if (prop.Name.Contains("str")) formattedName = prop.Name.Substring(3);
 
                 if (!string.IsNullOrEmpty(prop.GetValue(mealDetails)?.ToString()))
-                {
                     prepList.Add(new
                     {
                         Key = formattedName,
                         Value = prop.GetValue(mealDetails)
                     });
-                }
             }
 
             TableVisualisationEngine.ShowTable(prepList, mealDetails.strMeal);

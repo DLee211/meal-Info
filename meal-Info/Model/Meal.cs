@@ -4,8 +4,7 @@ namespace meal_Info.Model;
 
 public class Meals
 {
-    [JsonProperty("meals")]
-    public List<Meal> MealsList { get; set; }
+    [JsonProperty("meals")] public List<Meal> MealsList { get; set; }
 }
 
 public class Meal
