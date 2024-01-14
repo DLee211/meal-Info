@@ -21,6 +21,5 @@ public class TableVisualisationEngine
             .WithFormat(ConsoleTableBuilderFormat.Alternative)
             .ExportAndWriteLine(TableAligntment.Center);
         Console.WriteLine("\n\n");
-        
     }
 }

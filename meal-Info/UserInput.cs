@@ -6,7 +6,9 @@ public class UserInput
     private MealService mealService = new();
     public void GetCategoriesInput()
     {
-        mealService.GetCategories();
-        Console.ReadLine();
+        var categories = mealService.GetCategories();
+        
+        Console.WriteLine("Choose category:");
+        string category = Console.ReadLine();
     }
 }
