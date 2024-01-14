@@ -10,8 +10,14 @@ internal class MealDetailObject
 
 public class MealDetails
 {
+    
+    public object idMeal { get; set; }
     public string strMeal { get; set; }
-        public object strMealAlternate { get; set; }
+        
+    public string strDrinkAlternate { get; set; }
+    
+    public string strArea { get; set; }
+    
         public object strTags { get; set; }
         public object strVideo { get; set; }
         public string strCategory { get; set; }
