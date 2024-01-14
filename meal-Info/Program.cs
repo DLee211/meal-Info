@@ -1,12 +1,11 @@
-﻿namespace meal_Info
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            UserInput userInput = new();
+﻿namespace meal_Info;
 
-            userInput.GetCategoriesInput();
-        }
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        UserInput userInput = new();
+
+        userInput.GetCategoriesInput();
     }
 }

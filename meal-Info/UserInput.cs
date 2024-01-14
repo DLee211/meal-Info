@@ -2,14 +2,14 @@
 
 public class UserInput
 {
+    private readonly MealService mealService = new();
 
-    private MealService mealService = new();
     public void GetCategoriesInput()
     {
         var categories = mealService.GetCategories();
-        
+
         Console.WriteLine("Choose category:");
-        string category = Console.ReadLine();
+        var category = Console.ReadLine();
 
         GetMealInput(category);
     }
@@ -17,17 +17,13 @@ public class UserInput
     private void GetMealInput(string category)
     {
         mealService.GetMealByCategory(category);
-        
+
         Console.WriteLine("Choose a meal ID or go back to category menu by typing 0:");
 
-        string mealId = Console.ReadLine();
+        var mealId = Console.ReadLine();
 
-        if (mealId == "0")
-        {
-            GetCategoriesInput();
-        }
+        if (mealId == "0") GetCategoriesInput();
 
         mealService.GetMeal(mealId);
-
     }
 }

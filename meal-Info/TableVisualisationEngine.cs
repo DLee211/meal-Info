@@ -1,12 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using ConsoleTableExt;
-using meal_Info.Model;
 
 namespace meal_Info;
 
 public class TableVisualisationEngine
 {
-    public static void ShowTable<T>(List<T> tableData,[AllowNull] string tableName) where T : class
+    public static void ShowTable<T>(List<T> tableData, [AllowNull] string tableName) where T : class
     {
         Console.Clear();
 
