@@ -20,7 +20,14 @@ public class UserInput
         
         Console.WriteLine("Choose a meal ID or go back to category menu by typing 0:");
 
-        string meal = Console.ReadLine();
+        string mealId = Console.ReadLine();
+
+        if (mealId == "0")
+        {
+            GetCategoriesInput();
+        }
+
+        mealService.GetMeal(mealId);
 
     }
 }
