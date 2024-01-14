@@ -16,6 +16,11 @@ public class UserInput
 
     private void GetMealInput(string category)
     {
-        throw new NotImplementedException();
+        mealService.GetMealByCategory(category);
+        
+        Console.WriteLine("Choose a meal ID or go back to category menu by typing 0:");
+
+        string meal = Console.ReadLine();
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using meal_Info.Model;
+﻿using System.Web;
+using meal_Info.Model;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -25,5 +26,30 @@ public class MealService
         }
 
         return categories;
+    }
+
+    internal List<Meal> GetMealByCategory(string category)
+    {
+        var client = new RestClient("http://www.themealdb.com/api/json/v1/1/");
+        var request = new RestRequest($"filter.php?c={HttpUtility.UrlEncode(category)}");
+
+        var response = client.ExecuteAsync(request);
+
+        List<Meal> meals = new();
+
+        if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            string rawResponse = response.Result.Content;
+
+            var serialize = JsonConvert.DeserializeObject<Meals>(rawResponse);
+
+            meals = serialize.MealsList;
+
+            TableVisualisationEngine.ShowTable(meals, "Meal Menu");
+
+            return meals;
+        }
+
+        return meals;
     }
 }
