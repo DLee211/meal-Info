@@ -9,6 +9,8 @@ public class UserInput
     public void GetCategoriesInput()
     {
         var categories = mealService.GetCategories();
+        
+        Console.WriteLine("\n");
 
         Console.WriteLine("Choose category:");
         var category = Console.ReadLine();
@@ -21,6 +23,8 @@ public class UserInput
     private void GetMealInput(string category)
     {
         var meal = mealService.GetMealByCategory(category);
+        
+        Console.WriteLine("\n");
 
         Console.WriteLine("Choose a meal ID or go back to category menu by typing 0:");
 
