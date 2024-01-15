@@ -19,6 +19,5 @@ public class TableVisualisationEngine
             .WithColumn(tableName)
             .WithFormat(ConsoleTableBuilderFormat.Alternative)
             .ExportAndWriteLine(TableAligntment.Center);
-        Console.WriteLine("\n\n");
     }
 }
